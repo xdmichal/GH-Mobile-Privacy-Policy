@@ -1,16 +1,108 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polityka Prywatności</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
-        h1 { color: #111; }
-    </style>
-</head>
-<body>
-    <h1>Polityka Prywatności</h1>
-    <p>Tutaj wklej tekst swojej polityki prywatności...</p>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GH Mobile – Privacy Policy</title><style>
+body{font-family:sans-serif;line-height:1.5;margin:16px;background:#202020;color:#eee}
+h1{font-size:1.4em}h2{font-size:1.15em;margin-top:1.6em;border-bottom:1px solid #555;padding-bottom:2px}
+a{color:#8ab4f8}code{background:#333;padding:1px 4px}li{margin:3px 0}
+@media (prefers-color-scheme: light){body{background:#fff;color:#111}code{background:#eee}a{color:#1a56c4}h2{border-color:#bbb}}
+.ph{background:#7a5c00;color:#fff;padding:0 4px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #666;padding:4px 6px;text-align:left;vertical-align:top;font-size:0.95em}</style></head><body>
+<h1>GH Mobile – Privacy Policy</h1>
+<p>Last updated: 24 October 2026</p>
+<p>GH Mobile (“the app”) is an unofficial, community-made Android IRC client for the GTA2 Game Hunter community. It is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive. This policy explains what personal data the app handles, why, and what rights you have under the EU General Data Protection Regulation (GDPR) and Google Play rules.</p>
+
+<h2>1. Who is responsible</h2>
+<p>Developer: Michał Jakub Piotrowski<br>
+Contact e-mail: <a href="mailto:xdmichal@gmail.com">xdmichal@gmail.com</a><br>
+Discord: <a href="https://gtamp.com/discord">https://gtamp.com/discord</a></p>
+<p>The developer runs <b>no server</b> for the app and <b>does not collect, receive, store or sell</b> your personal data. Data that the app creates stays on your phone. The only network connection is to the GTANet IRC server (see section 4), which is operated by a third party.</p>
+
+<h2>2. In short</h2>
+<ul>
+<li>No ads, no analytics, no crash-reporting services, no tracking libraries, no advertising ID.</li>
+<li>No account with the developer. You sign in with your own IRC (NickServ) account on GTANet.</li>
+<li>The connection to the IRC server is encrypted (TLS).</li>
+<li>Chat history is stored only on your phone, and you can switch it off or delete it.</li>
+</ul>
+
+<h2>3. Data on your device</h2>
+<table>
+<tr><th>Data</th><th>Purpose</th><th>Where / how long</th></tr>
+<tr><td>IRC nick</td><td>Signing in, recognising your own messages</td><td>App settings, until you change it, clear app data or uninstall</td></tr>
+<tr><td>IRC password</td><td>Signing in to your NickServ account (also automatically, if you enable that option)</td><td>Encrypted with a key kept in the Android Keystore, until you clear app data or uninstall</td></tr>
+<tr><td>Settings: notification choices (countries, continents, words, sounds), friends and ignored nicks, quit message, theme, layout, font size and similar</td><td>Making the app work as you configured it</td><td>App settings, until you reset them, clear app data or uninstall</td></tr>
+<tr><td>Chat history: messages from the channel and private conversations (optional, on by default)</td><td>Keeping messages after the app restarts, search</td><td>Text files in the app’s private storage, trimmed automatically (about the last 3000 lines per conversation). Conversations with NickServ and other services are never saved. Off/delete: Options → Connection → Chat history</td></tr>
+<tr><td>Technical logs (connection and server messages shown in the app’s Logs panel)</td><td>Showing you what the app and the server are doing</td><td>Kept only in the app’s memory while it runs, never written to disk and never sent anywhere. The developer does not collect them.</td></tr>
+<tr><td>Unsent message drafts</td><td>Not losing text you were typing</td><td>App settings, removed when sent</td></tr>
+<tr><td>Exported settings file (only if you use “Export settings”)</td><td>Moving settings to another phone</td><td>Saved where you choose. It contains settings only, never your password. You are responsible for that file.</td></tr>
+</table>
+<p>All of this stays on the device. Uninstalling the app or clearing its data removes it. Because the developer does not receive this data, the developer cannot access or recover it.</p>
+
+<p>Although the app asks you for your IRC nick and password, the developer does not receive or collect them: they go only from your phone to the IRC server you sign in to.</p>
+
+<h2>4. Data sent over the network</h2>
+<p>To chat, the app connects to the GTANet IRC server (<code>COMET.UK.EU.GTANET.COM</code>, port 6697, channel <code>#gta2gh</code>) and sends what any IRC client sends:</p>
+<ul>
+<li>your nick and password (to sign in to your NickServ account), your messages and commands;</li>
+<li>a short information notice, like the Windows Game Hunter sends: your <b>country code</b>, the client label (e.g. “0.5Android”), the theme code and game status;</li>
+<li>an “Away” status when the screen is locked, and the quit message you chose (default “no reason”) when you sign out.</li>
+</ul>
+<p>Your <b>country code</b> is determined on the phone, from the SIM card or mobile network, from your own address as seen by the IRC server (using a country database bundled in the app, “IP to Country Lite” by DB-IP, CC BY 4.0) or from the phone’s language. No external geolocation service is contacted.</p>
+<p><b>The channel is public.</b> Everything you write there, your nick, country code and status are visible to every user of the channel, who can read, copy and log them. The IRC server and its operators also see your IP address and host name, as in any IRC connection.</p>
+<p><b>Encryption.</b> The connection is encrypted with TLS. The server’s certificate is not accepted by Android’s standard certificate check, so the app trusts it by comparing its fingerprint with a fingerprint built into the app (certificate pinning). A different certificate is rejected.</p>
+<p><b>Outgoing message limit.</b> To avoid server “flood” disconnects, the app sends messages at a limited rate and splits very long messages. This happens only on the device.</p>
+
+<h2>5. Purposes and legal bases (GDPR)</h2>
+<p>Insofar as the data above is personal data and the developer is considered to process it on your device or on your behalf:</p>
+<ul>
+<li><b>Providing the app and the IRC connection you request</b> – Art. 6(1)(b) GDPR (performance of the service you asked for).</li>
+<li><b>Security and preventing abuse of the IRC server</b> (rate limiting, certificate pinning) – Art. 6(1)(f) GDPR (legitimate interest).</li>
+<li><b>Notifications</b> you switch on – Art. 6(1)(b) GDPR; you can switch them off any time.</li>
+</ul>
+<p>The developer does not use your data for advertising, profiling or automated decision-making.</p>
+
+<h2>6. Recipients and transfers</h2>
+<ul>
+<li><b>GTANet IRC network</b> – receives the data in section 4 as an independent controller. Its own rules and privacy policy apply to data it holds (including your NickServ account). Its servers may be located outside Poland and outside the European Economic Area.</li>
+<li><b>Other users of the channel</b> – see everything you write publicly.</li>
+<li>The developer, Google and other parties <b>do not receive</b> your chat data from the app. The app uses no Google Play Services APIs, Firebase or similar services. (Google Play may separately collect data under its own policy when you install the app from the store.)</li>
+<li>Open-source libraries (Kitteh IRC Client Library, Netty, AndroidX) run inside the app and send nothing anywhere.</li>
+</ul>
+
+<h2>7. Permissions</h2>
+<ul>
+<li><b>Internet / network state</b> – connect to the IRC server and reconnect when the network returns.</li>
+<li><b>Foreground service</b> – keep the connection alive in the background (shown as a notification).</li>
+<li><b>Notifications</b> – alerts for games, countries, words, friends and private messages, with an option to reply from the notification.</li>
+<li><b>Run at startup</b> – only used if you enable automatic sign-in after the phone starts.</li>
+<li><b>Battery optimisation exemption</b> – optional, only if you tap “Keep connection in background”.</li>
+</ul>
+<p>The app does not request access to contacts, location, camera, microphone, photos or files. The settings export/import and sound selection use the system pickers.</p>
+
+<h2>8. Retention</h2>
+<p>Data stays on your phone until you delete it (reset settings, delete history, clear app data) or uninstall the app. The developer keeps no copies. How long the IRC network or other users keep what you posted is outside the developer’s control.</p>
+
+<h2>9. Your rights</h2>
+<p>Under the GDPR you may request access, rectification, erasure, restriction of processing, data portability, and you may object to processing based on legitimate interest. You may withdraw any consent at any time. Because the developer holds no copy of your data, you can exercise most of these rights yourself in the app (Options: change or delete settings and history, export settings) or by uninstalling it. For data held by GTANet, contact the IRC network. For anything else, write to the contact e-mail above.</p>
+<p>You may also lodge a complaint with a supervisory authority. In Poland this is the President of the Personal Data Protection Office (UODO), ul. Stawki 2, 00-193 Warsaw, <a href="https://uodo.gov.pl">uodo.gov.pl</a>; in other EU countries, your national authority.</p>
+
+<h2>10. Account and data deletion</h2>
+<p>The app has no account with the developer, so there is nothing to delete on the developer’s side. To delete the data the app stores: Options → Connection → Chat history → Delete history; “Restore default settings”; or Android Settings → Apps → GH Mobile → Storage → Clear data; or uninstall the app. To remove your IRC account, contact GTANet.</p>
+
+<h2>11. Children</h2>
+<p>The app is not directed at children and is not intended for people under 16. The channel is a public chat open to everyone.</p>
+
+<h2>12. Security</h2>
+<p>The password is stored encrypted (Android Keystore), the connection uses TLS with a pinned certificate, history is kept in the app’s private storage, and the app has no external services. No system is perfectly secure. Do not share sensitive information in a public channel.</p>
+
+<h2>13. Google Play “Data safety” summary</h2>
+<table>
+<tr><th>Item</th><th>Answer</th></tr>
+<tr><td>Data collected by the developer</td><td>None. Data is not sent to the developer.</td></tr>
+<tr><td>Data shared with third parties</td><td>Messages, nick and country code are sent to the IRC network you connect to, at your request, as the core function of the app.</td></tr>
+<tr><td>Data encrypted in transit</td><td>Yes (TLS)</td></tr>
+<tr><td>Data deletion</td><td>Yes, by the user, see section 10</td></tr>
+<tr><td>Ads / analytics</td><td>None</td></tr>
+</table>
+
+<h2>14. Changes</h2>
+<p>If the app starts handling data differently, this policy will be updated and the date above changed. Material changes will be announced in the app’s release notes.</p>
+</body></html>
